@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exemplo de Checkboxes com Links Personalizados</title>
+    <script>
+        // Função para obter parâmetros da URL
+        function getQueryParameter(param) {
+            const urlParams = new URLSearchParams(window.location.search);
+            return urlParams.get(param);
+        }
+
+        // Função para marcar a checkbox com base no nome do parâmetro
+        function marcarCheckbox() {
+            const nome = getQueryParameter('nome');  // Obtém o valor do parâmetro 'nome'
+            if (nome) {
+                const checkbox = document.getElementById(`checkbox${nome}`);
+                if (checkbox) {
+                    checkbox.checked = true;  // Marca a checkbox correspondente
+                }
+            }
+        }
+
+        // Chama a função ao carregar a página
+        window.onload = marcarCheckbox;
+    </script>
+</head>
+<body>
+
+    <!-- Checkboxes para as pessoas -->
+    <label>
+        <input type="checkbox" id="checkboxJose"> José
+    </label>
+    <br><br>
+
+    <label>
+        <input type="checkbox" id="checkboxMaria"> Maria
+    </label>
+    <br><br>
+
+    <label>
+        <input type="checkbox" id="checkboxPaulo"> Paulo
+    </label>
+    <br><br>
+
+    <label>
+        <input type="checkbox" id="checkboxMoises"> Moisés
+    </label>
+    <br><br>
+
+    <label>
+        <input type="checkbox" id="checkboxNoe"> Noé
+    </label>
+    <br><br>
+
+</body>
+</html>
